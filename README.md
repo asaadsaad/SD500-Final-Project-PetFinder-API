@@ -16,6 +16,13 @@ The response returns the following body: `{ "token_type": string, "expires_in": 
 * The `access_token` expires in 1 hour.
 * You will need to include the `access_token` in all future requests headers as follows: `{ 'Authorization': 'Bearer access_token' }`
 * Make sure [jwt-decode](https://github.com/auth0/jwt-decode#readme) package is installed (`npm i jwt-decode`). Use the package to decode the `access_token` and read its content.
+```typescript
+import { jwtDecode } from "jwt-decode";
+type JWTType = { exp: number };
+
+const token = "eyJhsw5c...";
+const decoded = jwtDecode<JWTType>(token); // Returns with the JwtPayload type
+```
 * The `access_token` contains an `exp` property which is the timestamp of expiration, you may compare it with `Date.now()` to know if the `access_token` has expired or not.
 * Make sure you have [node-localstorage](https://github.com/lmaccherone/node-localstorage) package installed (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
 * Your application must re-fetch a new `access_token` only if the previous one is expired.
