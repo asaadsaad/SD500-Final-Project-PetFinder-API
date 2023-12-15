@@ -26,7 +26,7 @@ The response returns the following body: `{ "token_type": string, "expires_in": 
 * You are allowed to send 50 requests per second, with a total of 1000 requests per day. Keep an eye on your daily usage in the `Developer Settings` page.
 * The `access_token` expires in 1 hour.
 * You will need to include the `access_token` in all future requests headers as follows: `{ 'Authorization': 'Bearer access_token' }`
-* Make sure [jwt-decode](https://github.com/auth0/jwt-decode#readme) package is installed (`npm i jwt-decode`). Use the package to decode the `access_token` and read its content.
+* Install the [jwt-decode](https://github.com/auth0/jwt-decode#readme) package (`npm i jwt-decode`). Use the package to decode the `access_token` and read its content.
 ```typescript
 import { jwtDecode } from "jwt-decode";
 type JWTType = { exp: number, aud: string, jti: string};
@@ -35,9 +35,9 @@ const token = "eyJhsw5c...";
 const decoded = jwtDecode<JWTType>(token); // Returns JWTType
 ```
 * The `access_token` contains an `exp` property which is the timestamp of expiration, you may compare it with `Date.now()` to know if the `access_token` has expired or not.
-* Make sure you have [node-localstorage](https://github.com/lmaccherone/node-localstorage) package installed (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
+* Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
 * Your application must re-fetch a new `access_token` only if the previous one is expired.
-* Make sure you have [prompts](https://github.com/terkelg/prompts#readme) package installed (`npm i prompts` and `npm i @types/prompts`) and use the [Select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
+* Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts`) and use the [Select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
     1. Animal `name`, value type is `string` - optional
     2. Animal `type`, value type is `select` from two choices `Dog` or `Cat` - required
     3. Animal `gender`, value type is `select` from the two choices `Male` or `Female` - required
