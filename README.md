@@ -43,7 +43,7 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
     3. Animal `gender`, value type is `select` from the two choices `Male` or `Female` - required
 * Once you collect the answers of the above questions, send a request to `GET https://api.petfinder.com/v2/animals` and pass the choices as query string, for example: `?name=Theo&type=Dog&gender=Male`, or `?type=Dog&gender=Male` if the name was null.
 * Display the pets `name` as choices for a new [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) prompt, where the pet `name` is used as `title` and `id` is used as a `value` for every `choice`. 
-* When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/{id}` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`.
+* When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/:id` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`. *(replace `:id` in the URL with the pet `id`)*
 * Redirect the prompt back to the 3-questions prompt.
   
 ### Optional Bonus Requirement (3 extra points)
