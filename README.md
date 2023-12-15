@@ -37,12 +37,12 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
 * The `access_token` contains an `exp` property which is the timestamp of expiration, you may compare it with `Date.now()` to know if the `access_token` has expired or not.
 * Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
 * Your application must re-fetch a new `access_token` only if the previous one is expired.
-* Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts`) and use the [Select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
+* Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts`) and use the [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
     1. Animal `name`, value type is `string` - optional
     2. Animal `type`, value type is `select` from two choices `Dog` or `Cat` - required
     3. Animal `gender`, value type is `select` from the two choices `Male` or `Female` - required
 * Once you collect the answers of the above questions, send a request to `GET https://api.petfinder.com/v2/animals` and pass the choices as query string, for example: `?name=Theo&type=Dog&gender=Male`, or `?type=Dog&gender=Male` if the name was null.
-* Display the pets `name` as choices for a new `select` prompt, where the pet `name` is used as `title` and `id` is used as a `value` for every `choice`. 
+* Display the pets `name` as choices for a new [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) prompt, where the pet `name` is used as `title` and `id` is used as a `value` for every `choice`. 
 * When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/{id}` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`.
 * Redirect the prompt back to the 3-questions prompt.
   
