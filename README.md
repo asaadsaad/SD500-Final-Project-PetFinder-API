@@ -7,7 +7,7 @@ Create an application to browse the [Petfinder API](https://www.petfinder.com/de
    * If `access_token` state exists and it is not expired, load it from hard drive, you don't need to get a new one unless it is expired.
 * Search for pets: prompt the user asking a few questions about the pet `name`, `type`, and `gender`, and send a request to the API to retrieve the results.
 * Display the results (pet names) in the form of another [select/choice](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) question which allows the user to pick one pet from the results to see more details about the pet.
-* When the user picks one pet result, send a request to the API and display the pet details.
+* When the user picks one pet from the list of results, send a request to the API and display the pet details.
 * Redirect the user to the Search prompt.
 * In every request: if `access_token` is valid attach it to the request headers, otherwise, get a new one, decode it, save it with `exp` date to the local storage, and use the new one.
 
