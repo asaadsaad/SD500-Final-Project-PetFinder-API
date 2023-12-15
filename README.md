@@ -9,7 +9,7 @@ Create an application to browse the [Petfinder API](https://www.petfinder.com/de
 * Display the results (pet names) in the form of another [select/choice](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) question which allows the user to pick one pet from the results to see more details about the pet.
 * When the user picks one pet from the list of results, send a request to the API and display the pet details.
 * Redirect the user to the Search prompt.
-* In every request: if `access_token` is valid attach it to the request headers, otherwise, get a new one, decode it, save it with `exp` date to the local storage, and use the new one.
+* Before every request: if `access_token` is not expired attach it to the request headers, otherwise, get a new one, decode it, save it with `exp` date to the local storage, and use the new one.
 
 ## Technical Details
 Head to the [Petfinder API](https://www.petfinder.com/developers/v2/docs/) website and create a free account. Go to `Developer Settings` and retrieve your `API Key` and `Secret Key`. 
