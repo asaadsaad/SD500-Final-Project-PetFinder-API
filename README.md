@@ -48,10 +48,11 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
   
 ### Optional Bonus Requirement (3 extra points)
 Integrate a list of bookmarks, as an object of pet `id` and `name` as follows: `{[id: string]: string}`, integrate an additional prompt after the pet details are displayed to:
-* add the selected pet from the bookmark list (if it is not already added)
-* remove the selected pet from the bookmark list (if it is already added)
+* add the selected pet from the bookmark list *(if it is not already added)*
+* remove the selected pet from the bookmark list *(if it is already added)*
 * display the full list of bookmarks
 * go to the 3-questions search prompt
+  
 The bookmark list must also be persisted on the hard-disk and retrieved when the application bootstrap. 
 
 ### Application specifications
