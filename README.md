@@ -1,6 +1,17 @@
 # SD500-Final-Project-PetFinder-API
 Create an application to browse the [Petfinder API](https://www.petfinder.com/developers/v2/docs/).
 
+## Workflow
+* Bootstrap:
+   * get an `access_token` from Petfinder API, decode, and save it with expiration date in local storage.
+   * If `access_token` state exists and it is not expired, load it from hard drive, you don't need to get a new one unless it is expired.
+* Search for pets: prompt the user asking a few questions about the pet name, type, and gender, and send a request to the API to retrieve the results.
+* Display the results (pet names) in form of another [select/choice](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) question which allows the user to pick one pet from the results to see more details about the pet.
+* When the user picks one pet result, send a request to the API and display the pet details.
+* Redirect the user to the Search prompt.
+* In every request: if `access_token` is valid attach it to the request headers, otherwise, get a new one, decode it, save it with `exp` date to the local storage, and use the new one.
+
+## Technical Details
 Head to the [Petfinder API](https://www.petfinder.com/developers/v2/docs/) website and create a free account. Go to `Developer Settings` and retrieve your `API Key` and `Secret Key`. 
   
 When your application bootstrap, send a `POST` request to `https://api.petfinder.com/v2/oauth2/token` and include the following JSON in the request body:
@@ -35,8 +46,13 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
 * When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/{id}` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`.
 * Redirect the prompt back to the 3-questions prompt.
   
-### Bonus Requirement (3 extra points)
-Integrate a list of bookmarks, as array of pet name and id, add a prompt to add or remove a pet from the bookmark list after the pet details are displayed, display the list of bookmarks after you add or remove the pet from the list and then take the user to the 3-questions prompt. The bookmark list must also be persisted on the hard-disk and retrieved when the application bootstrap. 
+### Optional Bonus Requirement (3 extra points)
+Integrate a list of bookmarks, as array of pet `name` and `id`, integrate an additional prompt after the pet details are displayed to:
+* add the selected pet from the bookmark list (if it is not already added)
+* remove the selected pet from the bookmark list (if it is already added)
+* display the full list of bookmarks
+* go to the 3-questions search prompt
+The bookmark list must also be persisted on the hard-disk and retrieved when the application bootstrap. 
 
 ### Application specifications
 * Use Object-Oriented programming when possible.
