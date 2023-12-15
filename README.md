@@ -67,4 +67,4 @@ The submission deadline is on Tuesday at 9:00 PM. I will meet with you on Wednes
 
 Good luck, and happy coding!
 
-_Code Honor Submission Policy: Remember to respect the code honor submission policy. All written code must be original. Presenting any code as one’s own work when it came from another source is plagiarism, which includes any matching patterns and code snippets, and will affect your grade. The use of AI is not permitted in this assignment. For more details, check the full course policies in the syllabus._
+_Code Honor Submission Policy: Remember to respect the code honor submission policy. All written code must be original. Presenting any code as one’s own work when it came from another source is plagiarism, which includes any matching patterns and code snippets. The use of AI is not permitted in this assignment. For more details, check the full course policies in the syllabus._
