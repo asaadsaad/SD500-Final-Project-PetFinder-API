@@ -44,7 +44,7 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
 * Once you collect the answers of the above questions, send a request to `GET https://api.petfinder.com/v2/animals` and pass the choices as query string, for example: `?name=Theo&type=Dog&gender=Male`, or `?type=Dog&gender=Male` if the name was null.
 * Display the pets `name` as choices for a new [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) prompt, where the pet `name` is used as `title` and `id` is used as a `value` for every `choice`. 
 * When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/:id` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`. *(replace `:id` in the URL with the pet `id`)*
-* Redirect the prompt back to the 3-questions prompt.
+* Redirect the prompt back to the 3-questions search prompt.
   
 ### Optional Bonus Requirement (3 extra points)
 Integrate a list of bookmarks, as array of pet `name` and `id`, integrate an additional prompt after the pet details are displayed to:
