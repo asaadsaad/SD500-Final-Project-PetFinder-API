@@ -46,7 +46,14 @@ const decoded = jwtDecode<JWTType>(token); // Returns JWTType
 * When the user picks a pet, fetch the pet details by `id` from the following API endpoint: `GET https://api.petfinder.com/v2/animals/:id` and display the pet details: `name`, `breed`, `size`, `age`, `color`, `status`. *(replace `:id` in the URL with the pet `id`)*
 * Redirect the prompt back to the 3-questions search prompt.
   
-### Optional Bonus Requirement (3 extra points)
+## Application specifications
+* Use Object-Oriented programming when possible.
+* Divide your application into separate modules.
+* All responses must be typed, and your application must not have objects with type `any`.
+* A daily push is required to track your code progress and measure your performance.
+  
+
+## Optional Bonus Requirement (3 extra points)
 Integrate a list of bookmarks, as an object of pet `id` and `name` as follows: `{[id: string]: string}`, integrate an additional prompt after the pet details are displayed to:
 * add the selected pet from the bookmark list *(if it is not already added)*
 * remove the selected pet from the bookmark list *(if it is already added)*
@@ -54,13 +61,7 @@ Integrate a list of bookmarks, as an object of pet `id` and `name` as follows: `
 * go to the 3-questions search prompt
   
 The bookmark list must also be persisted on the hard-disk and retrieved when the application bootstrap. 
-
-### Application specifications
-* Use Object-Oriented programming when possible.
-* Divide your application into separate modules.
-* All responses must be typed, and your application must not have objects with type `any`.
-* A daily push is required to track your code progress and measure your performance. 
-
+  
 ## Final Evaluation 
 The submission deadline is on Tuesday at 9:00 PM. I will meet with you on Wednesday and Thursday as per the schedule and evaluate the final project code.  
 
