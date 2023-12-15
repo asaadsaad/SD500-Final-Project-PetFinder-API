@@ -1,4 +1,6 @@
 # SD500-Final-Project-PetFinder-API
+The project repository should be "Accepted/Forked" by team leaders only. One team member (team leader) will add their team members as "collaborators" so they could collaborate and push their daily progress.
+  
 Create an application to browse the [Petfinder API](https://www.petfinder.com/developers/v2/docs/).
 
 ## Workflow
