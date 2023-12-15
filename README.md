@@ -58,7 +58,7 @@ The bookmark list must also be persisted on the hard-disk and retrieved when the
 ### Application specifications
 * Use Object-Oriented programming when possible.
 * Divide your application into separate modules.
-* All Response must be typed, and your application must not have objects with type `any`.
+* All responses must be typed, and your application must not have objects with type `any`.
 * A daily push is required to track your code progress and measure your performance. 
 
 ## Final Evaluation 
