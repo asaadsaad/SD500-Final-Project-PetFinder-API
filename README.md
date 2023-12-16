@@ -14,7 +14,7 @@ Create an application to browse the [Petfinder API](https://www.petfinder.com/de
 * Before every request: if `access_token` is not expired attach it to the request headers, otherwise, get a new one, decode it, save it with `exp` date to the local storage, and use the new one.
 
 ## Technical Details
-Head to the [Petfinder API](https://www.petfinder.com/developers/v2/docs/) website and create a free account. Go to `Developer Settings` and retrieve your `API Key` and `Secret Key`. 
+Head to the [Petfinder API](https://www.petfinder.com/developers/) website and create a free account, then click on "Get an API Key" button. Go to `Developer Settings` and retrieve your `API Key` and `Secret Key`. 
   
 When your application bootstrap, send a `POST` request to `https://api.petfinder.com/v2/oauth2/token` and include the following JSON in the request body:
 ```javascript
