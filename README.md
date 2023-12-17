@@ -37,6 +37,13 @@ const access_token = "eyJhsw5c...";
 const decoded = jwtDecode<JWTType>(access_token); // Returns JWTType
 ```
 * The `access_token` contains an `exp` property which is the timestamp of expiration, you may compare it with `Date.now()` to know if the `access_token` has expired or not.
+```typescript
+// To check the access token expiration use this logic:
+
+const exp = 1702853501;
+const now = Math.floor(Date.now() / 1000);// to convert to UNIX timestamp
+console.log(exp > now); // true = valid, false = expired
+```
 * Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
 * Your application must re-fetch a new `access_token` only if the previous one is expired.
 * Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts`) and use the [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
