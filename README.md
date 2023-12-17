@@ -33,8 +33,8 @@ The response returns the following body: `{ "token_type": string, "expires_in": 
 import { jwtDecode } from "jwt-decode";
 type JWTType = { exp: number, aud: string, jti: string};
 
-const token = "eyJhsw5c...";
-const decoded = jwtDecode<JWTType>(token); // Returns JWTType
+const access_token = "eyJhsw5c...";
+const decoded = jwtDecode<JWTType>(access_token); // Returns JWTType
 ```
 * The `access_token` contains an `exp` property which is the timestamp of expiration, you may compare it with `Date.now()` to know if the `access_token` has expired or not.
 * Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
