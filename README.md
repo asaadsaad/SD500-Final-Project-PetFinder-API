@@ -60,6 +60,7 @@ console.log(exp > now); // true = valid, false = expired
 * Divide your application into separate modules.
 * All responses must be typed, and your application must not have objects with type `any`.
 * A daily push is required to track your code progress and measure your performance.
+* Make sure you follow the standards of naming conventions.
   
 
 ## Optional Bonus Requirement (3 extra points)
