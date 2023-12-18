@@ -44,9 +44,9 @@ const exp = 1702853501;
 const now = Math.floor(Date.now() / 1000);// to convert to UNIX timestamp
 console.log(exp > now); // true = valid, false = expired
 ```
-* Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
+* Install the [node-localstorage](https://github.com/lmaccherone/node-localstorage) package (`npm i node-localstorage` and `npm i @types/node-localstorage -D`), and persist both `access_token` and `exp` values on the hard-disk, to be retrieved when the application reloads.
 * Your application must re-fetch a new `access_token` only if the previous one is expired.
-* Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts`) and use the [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
+* Install the [prompts](https://github.com/terkelg/prompts#readme) package (`npm i prompts` and `npm i @types/prompts -D`) and use the [select](https://github.com/terkelg/prompts?tab=readme-ov-file#selectmessage-choices-initial-hint-warn) feature to ask the following list of questions:
     1. Animal `name`, value type is `string` - optional
     2. Animal `type`, value type is `select` from two choices `Dog` or `Cat` - required
     3. Animal `gender`, value type is `select` from the two choices `Male` or `Female` - required
